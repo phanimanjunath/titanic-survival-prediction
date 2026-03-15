@@ -5,7 +5,7 @@
 ![Accuracy](https://img.shields.io/badge/Accuracy-82.68%25-brightgreen)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
-> Predicting who survived the Titanic disaster using 
+> Predicting who survived the Titanic disaster using
 > Machine Learning — Random Forest Classifier
 
 ---
@@ -21,8 +21,8 @@ to predict survival with **82.68% accuracy.**
 
 ## 🎯 Problem Statement
 
-**Can we predict whether a passenger survived the Titanic
-based on features like age, gender, fare and class?**
+Can we predict whether a passenger survived the Titanic
+based on features like age, gender, fare and class?
 
 ---
 
@@ -45,8 +45,8 @@ based on features like age, gender, fare and class?**
 - "Women and children first" policy was real
 
 ### 2. Wealth determined survival
-- Average fare of survivors → **₹48.40**
-- Average fare of those who died → **₹22.12**
+- Average fare of survivors → **48.40**
+- Average fare of those who died → **22.12**
 - Wealthy passengers had cabins closer to lifeboats
 
 ### 3. Passenger class mattered
@@ -103,3 +103,100 @@ based on features like age, gender, fare and class?**
 ---
 
 ## 🧹 Data Cleaning Steps
+
+- Dropped irrelevant columns — PassengerId, Name, Ticket, Cabin
+- Filled Age missing values with median (28.0)
+- Filled Embarked missing values with mode (S)
+- Encoded Sex — male=0, female=1
+- Encoded Embarked — S=0, C=1, Q=2
+
+---
+
+## 🤖 Model Details
+
+- Algorithm — Random Forest Classifier
+- Trees — 100 estimators
+- Train/Test Split — 80% / 20%
+- Random State — 42
+- **Accuracy — 82.68%**
+
+---
+
+## 📉 Model Performance
+
+| Class | Precision | Recall | F1-Score |
+|---|---|---|---|
+| Died | 0.84 | 0.88 | 0.86 |
+| Survived | 0.80 | 0.74 | 0.77 |
+| **Overall** | | | **0.83** |
+
+---
+
+## 🛠️ Tech Stack
+
+| Tool | Purpose |
+|---|---|
+| Python | Core language |
+| Pandas | Data manipulation |
+| NumPy | Numerical operations |
+| Matplotlib | Base visualizations |
+| Seaborn | Statistical plots |
+| Scikit-learn | ML model |
+
+---
+
+## 🚀 How to Run
+
+1. Clone the repository
+
+        git clone https://github.com/phanimanjunath/titanic-survival-prediction.git
+
+2. Install dependencies
+
+        pip install -r requirements.txt
+
+3. Open the notebook
+
+        cd notebooks
+        jupyter notebook analysis.ipynb
+
+4. Run all cells — Kernel → Restart and Run All
+
+---
+
+## 📁 Project Structure
+
+    titanic-survival-prediction/
+    │
+    ├── data/
+    │   └── titanic.csv
+    │
+    ├── notebooks/
+    │   └── analysis.ipynb
+    │
+    ├── images/
+    │   └── (all plots)
+    │
+    ├── requirements.txt
+    └── README.md
+
+---
+
+## 💡 Conclusions
+
+> Survival on the Titanic was not random.
+> It was heavily determined by **gender, wealth and age.**
+> Wealthy women in 1st class had the highest survival chances.
+> Poor young men in 3rd class had the lowest survival chances.
+> The Random Forest model learned these patterns with 82.68% accuracy.
+
+---
+
+## 👨‍💻 Author
+
+**Phani Manjunath**
+- GitHub: [@phanimanjunath](https://github.com/phanimanjunath)
+
+---
+
+⭐ If you found this project helpful, give it a star!
